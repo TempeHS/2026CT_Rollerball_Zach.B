@@ -1,8 +1,12 @@
+using System.Collections;
+using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    public float speed = 5;
 
     private Rigidbody rb;
     private float movementX;
@@ -23,6 +27,10 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate() {
     Vector3 movement = new Vector3 (movementX, 0.0f, movementY);
 
-    rb.AddForce(movement); 
+    rb.AddForce(movement * speed); 
+   }
+
+   private void OnTriggerEnter(Collider Other) {
+    other.gameObject.SetActive(false);
    }
 }
