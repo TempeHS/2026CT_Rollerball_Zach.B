@@ -34,8 +34,9 @@ public class PlayerController : MonoBehaviour
 
     void SetCountText() {
         countText.text = "Count: " + count.ToString();
-        if(count >= 16) {
+        if(count >= 15) {
             winTextObject.SetActive(true);
+            Destroy(GameObject.FindGameObjectWithTag("Enemy"));
         }
     }
 
@@ -43,6 +44,14 @@ public class PlayerController : MonoBehaviour
     Vector3 movement = new Vector3 (movementX, 0.0f, movementY);
 
     rb.AddForce(movement * speed); 
+   }
+
+   private void OnCollisionEnter(Collision collision) {
+    if (collision.gameObject.CompareTag("Enemy")) {
+        Destroy(gameObject);
+        winTextObject.gameObject.SetActive(true);
+        winTextObject.GetComponent<TextMeshProUGUI>().text = "You Lose!";
+    }
    }
 
    private void OnTriggerEnter(Collider other) {
