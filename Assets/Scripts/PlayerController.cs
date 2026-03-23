@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     private int count;
     private float movementX;
     private float movementY;
+    private bool islevel1destroyed = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start() {
@@ -34,9 +35,18 @@ public class PlayerController : MonoBehaviour
 
     void SetCountText() {
         countText.text = "Count: " + count.ToString();
-        if(count >= 15) {
+        if(count >= 15 && !islevel1destroyed) {
+            islevel1destroyed = true;
+            DestroyLevel1Objects();
             winTextObject.SetActive(true);
-            Destroy(GameObject.FindGameObjectWithTag("Enemy"));
+            }
+        }
+    }
+
+    void DestroyLevel1Objects () {
+        GameObject[] level1Objects = GameObject.FindGameObjectsWithTag("Level1");
+        foreach (GameObject obj in level1Objects) {
+            Destory(obj);
         }
     }
 
