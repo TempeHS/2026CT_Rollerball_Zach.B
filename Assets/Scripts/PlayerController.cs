@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     private int count;
     private float movementX;
     private float movementY;
-    private bool islevel1destroyed = false;
+    public bool islevel1destroyed = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start() {
@@ -39,14 +39,13 @@ public class PlayerController : MonoBehaviour
             islevel1destroyed = true;
             DestroyLevel1Objects();
             winTextObject.SetActive(true);
-            }
         }
     }
 
     void DestroyLevel1Objects () {
         GameObject[] level1Objects = GameObject.FindGameObjectsWithTag("Level1");
         foreach (GameObject obj in level1Objects) {
-            Destory(obj);
+            Destroy(obj);
         }
     }
 
