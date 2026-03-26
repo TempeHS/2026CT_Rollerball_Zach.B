@@ -387,11 +387,11 @@ Transform:
   m_GameObject: {fileID: 99648681}
   serializedVersion: 2
   m_LocalRotation: {x: -0.15299776, y: 0.6903562, z: 0.15299776, w: -0.6903562}
-  m_LocalPosition: {x: -13.57, y: -14.492, z: 9.98}
-  m_LocalScale: {x: 6, y: 1.5, z: 3}
+  m_LocalPosition: {x: -4.5233335, y: 0.5080004, z: 3.3266666}
+  m_LocalScale: {x: 2.2701461, y: 1.1053804, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1124615000}
   m_LocalEulerAnglesHint: {x: 0, y: 270, z: -24.992}
 --- !u!1 &203844586
 GameObject:
@@ -530,7 +530,7 @@ GameObject:
   - component: {fileID: 270237232}
   m_Layer: 0
   m_Name: Walls
-  m_TagString: Untagged
+  m_TagString: Level1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -756,7 +756,7 @@ GameObject:
   - component: {fileID: 375136227}
   m_Layer: 0
   m_Name: South Wall
-  m_TagString: Untagged
+  m_TagString: Level1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1210,7 +1210,7 @@ GameObject:
   - component: {fileID: 726413158}
   m_Layer: 0
   m_Name: West Wall
-  m_TagString: Untagged
+  m_TagString: Level1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1602,7 +1602,7 @@ GameObject:
   - component: {fileID: 918684867}
   m_Layer: 0
   m_Name: North Wall
-  m_TagString: Untagged
+  m_TagString: Level1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2102,6 +2102,7 @@ Transform:
   m_Children:
   - {fileID: 320161131}
   - {fileID: 1273290431}
+  - {fileID: 99648685}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1128772406
@@ -2161,7 +2162,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You Win!
+  m_text: You beat level 1!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2678,6 +2679,7 @@ MonoBehaviour:
   speed: 10
   countText: {fileID: 1297924682}
   winTextObject: {fileID: 1128772406}
+  islevel1destroyed: 0
 --- !u!1 &1321834362
 GameObject:
   m_ObjectHideFlags: 0
@@ -3160,7 +3162,7 @@ GameObject:
   - component: {fileID: 1617813314}
   m_Layer: 0
   m_Name: East Wall
-  m_TagString: Untagged
+  m_TagString: Level1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4584,5 +4586,4 @@ SceneRoots:
   - {fileID: 311492247}
   - {fileID: 91510943}
   - {fileID: 1124615000}
-  - {fileID: 99648685}
   - {fileID: 89314557}

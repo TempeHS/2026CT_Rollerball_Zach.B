@@ -10,12 +10,13 @@ public class PlayerController : MonoBehaviour
     public float speed = 10;
     public TextMeshProUGUI countText;
     public GameObject winTextObject;
+    public bool islevel1destroyed = false;
 
     private Rigidbody rb;
     private int count;
     private float movementX;
     private float movementY;
-    public bool islevel1destroyed = false;
+    
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start() {
@@ -38,7 +39,9 @@ public class PlayerController : MonoBehaviour
         if(count >= 15 && !islevel1destroyed) {
             islevel1destroyed = true;
             DestroyLevel1Objects();
+            Destroy(GameObject.FindGameObjectWithTag("Enemy"));
             winTextObject.SetActive(true);
+            
         }
     }
 
@@ -47,6 +50,7 @@ public class PlayerController : MonoBehaviour
         foreach (GameObject obj in level1Objects) {
             Destroy(obj);
         }
+        
     }
 
     private void FixedUpdate() {
