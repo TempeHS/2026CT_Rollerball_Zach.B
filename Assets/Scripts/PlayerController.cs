@@ -38,9 +38,9 @@ public class PlayerController : MonoBehaviour
         countText.text = "Count: " + count.ToString();
         if(count >= 15 && !islevel1destroyed) {
             islevel1destroyed = true;
+            count = 0;
             DestroyLevel1Objects();
             Destroy(GameObject.FindGameObjectWithTag("Enemy"));
-            winTextObject.SetActive(true);
             
         }
     }
@@ -50,6 +50,7 @@ public class PlayerController : MonoBehaviour
         foreach (GameObject obj in level1Objects) {
             Destroy(obj);
         }
+        StartCoroutine(DelayWinText());
         
     }
 
@@ -74,5 +75,13 @@ public class PlayerController : MonoBehaviour
 
         SetCountText();
     }
+   }
+
+   private IEnumerator DelayWinText() {
+    winTextObject.SetActive(true);
+
+    yield return new WaitForSeconds(3f);    // delay 3 seconds
+
+    winTextObject.SetActive(false);
    }
 }
